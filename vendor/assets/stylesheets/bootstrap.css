@@ -305,11 +305,14 @@ html {
 }
 
 body {
+  background-image: url('../../../app/assets/images/george.jpeg');
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-position: right top; 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
 }
 
 input,
@@ -481,7 +484,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -880,7 +883,7 @@ pre code {
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
-  border: solid 2px #000000;
+  background-color: #cccccc;
   position: relative;
   margin: 8px;
   min-height: 1px;
@@ -1321,7 +1324,8 @@ pre code {
     width: 41.66666666666667%;
   }
   .col-md-4 {
-    width: 29.5%;
+    background-color: #cccccc;
+    width: 30.0%;
   }
   .col-md-3 {
     width: 25%;
@@ -4221,7 +4225,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #ffffff;
+  color: #000000;
   background-color: #cccccc;
 }
 
