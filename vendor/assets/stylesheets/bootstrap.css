@@ -305,7 +305,7 @@ html {
 }
 
 body {
-  background-image: url('/public/images/george.jpeg');
+  background-image: url(image-path('george.jpeg'));
   background-attachment:fixed;
   background-repeat: no-repeat;
   background-position: right top; 
