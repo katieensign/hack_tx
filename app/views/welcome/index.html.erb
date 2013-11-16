@@ -3,17 +3,18 @@
 <head>
 	<title>payday</title>
 	<script type="text/javascript" src="../../../vendor/assets/javascripts/bootstrap.js"></script>
-	<link href="../../../vendor/assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" media="all" href="../../../lib/assets/sendstyle.css" type="text/css" />
+	<!--<link href="../../../vendor/assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">-->
+	<%= stylesheet_link_tag "bootstrap.css", "sendstyle.css" %>
+	<!--<link rel="stylesheet" media="all" href="../../../lib/assets/sendstyle.css" type="text/css" />-->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="login.html.erb">Log in</a></li>
+          <li><a href="about.html.erb">About</a></li>
         </ul>
-        <a class="navlogo" href="#">
+        <a class="navlogo" href="index.html.erb">
         	<h2 class="navlogo">payday</h2>
     	</a>
     </div>
