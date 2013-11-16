@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116022429) do
+ActiveRecord::Schema.define(version: 20131116045915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "microposts", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "receivers", force: true do |t|
+    t.integer  "sender_id"
+    t.string   "email"
+    t.decimal  "salary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "senders", force: true do |t|
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.decimal  "amount"
+    t.datetime "time_sent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
