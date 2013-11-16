@@ -21,6 +21,10 @@ h2 {
 	margin-bottom: 10px;
 }
 
+a.getstarted {
+	background-color: #006600;
+}
+
 .mainbox {
 	background-color: rgba(204, 204, 204, .75);
 	border: 4px #ffffff;
@@ -28,6 +32,12 @@ h2 {
 	max-width: 800px;
 	height: 320px;
 	vertical-align: bottom;
+}
+
+.introbox {
+	max-width: 300px;
+	margin: 0;
+	padding: 0;
 }
 
 .colbox {
