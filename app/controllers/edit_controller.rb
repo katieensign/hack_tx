@@ -4,6 +4,8 @@ class EditController < ApplicationController
         return s
     end
     def new
+        @receiver = Receiver.new
+    def create
         @receiver = Receiver.new(params[:name, email, salary(payrate)])
     end
 end
