@@ -305,7 +305,7 @@ html {
 }
 
 body {
-  background-image: url('../../../app/assets/images/george.jpeg');
+  background-image: url(<%= image_tag "george.jpeg" %>);
   background-attachment:fixed;
   background-repeat: no-repeat;
   background-position: right top; 
