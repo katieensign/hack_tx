@@ -68,3 +68,176 @@ Started GET "/" for 127.0.0.1 at 2013-11-15 19:39:21 -0600
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/katie/.rvm/gems/ruby-2.0.0-p247@global/gems/railties-4.0.1/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
 Completed 200 OK in 24ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (33.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (7.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20131116022429)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (31.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "salary" decimal, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131116022429"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-15 20:25:42 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/katie/.rvm/gems/ruby-2.0.0-p247@global/gems/railties-4.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 31ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2013-11-15 20:25:46 -0600
+Processing by Rails::InfoController#properties as */*
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  Rendered /Users/katie/.rvm/gems/ruby-2.0.0-p247@global/gems/railties-4.0.1/lib/rails/templates/rails/info/properties.html.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-11-15 20:26:42 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 717ms (Views: 713.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-15 20:26:43 -0600
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-15 20:26:49 -0600
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (24.3ms)
+  Rendered users/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-15 20:28:17 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KK5wxSuQHkW4hKpBpJAmYoXJWcv5Mx8r9Qp7qhzoJms=", "user"=>{"name"=>"Katie Ensign", "email"=>"katie.ensign@gmail.com", "salary"=>"12,121"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (10.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "salary", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sat, 16 Nov 2013 02:28:18 UTC +00:00], ["email", "katie.ensign@gmail.com"], ["name", "Katie Ensign"], ["salary", #<BigDecimal:7fd53df2c960,'0.12E2',9(18)>], ["updated_at", Sat, 16 Nov 2013 02:28:18 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 17ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-11-15 20:28:18 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:18 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:18 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-15 20:28:18 -0600
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2013-11-15 20:28:22 -0600
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2013-11-15 20:28:25 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KK5wxSuQHkW4hKpBpJAmYoXJWcv5Mx8r9Qp7qhzoJms=", "user"=>{"name"=>"Katie Ensign", "email"=>"katie.ensign@gmail.com", "salary"=>"12000"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "users" SET "salary" = $1, "updated_at" = $2 WHERE "users"."id" = 1[0m  [["salary", #<BigDecimal:7fd540013430,'0.12E5',9(18)>], ["updated_at", Sat, 16 Nov 2013 02:28:25 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-11-15 20:28:25 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 4.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:25 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:25 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-15 20:28:25 -0600
+
+
+Started GET "/users" for 127.0.0.1 at 2013-11-15 20:28:35 -0600
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-15 20:28:46 -0600
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-15 20:28:59 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KK5wxSuQHkW4hKpBpJAmYoXJWcv5Mx8r9Qp7qhzoJms=", "user"=>{"name"=>"Jared", "email"=>"jaskdj@kfsdjh.com", "salary"=>"22222"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "salary", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sat, 16 Nov 2013 02:28:59 UTC +00:00], ["email", "jaskdj@kfsdjh.com"], ["name", "Jared"], ["salary", #<BigDecimal:7fd53df96158,'0.22222E5',9(18)>], ["updated_at", Sat, 16 Nov 2013 02:28:59 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2013-11-15 20:28:59 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:59 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-15 20:28:59 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-15 20:28:59 -0600
+
+
+Started GET "/users" for 127.0.0.1 at 2013-11-15 20:29:05 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
